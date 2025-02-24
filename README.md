@@ -1,5 +1,7 @@
 # jim_g_image_names_to_list
 
+video = https://youtu.be/Lg-Yjy78xq4
+
 Someone asked if it was possible, so I might as well add it here to go with my other batch files.
 
 What is this?
