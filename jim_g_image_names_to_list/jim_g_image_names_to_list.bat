@@ -1,22 +1,30 @@
 @echo off
 setlocal
-REM
+
+REM Check if a folder is dropped onto the script
 if "%~1"=="" (
     echo Please drop a folder onto this script.
     pause
     exit /b
 )
-REM
+
+REM Set the folder path to the dropped folder
 set "folder=%~1"
-REM
-set "outputFile=Image_name_List.txt"
-REM
+
+REM Set the output file name
+set "outputFile=ImageList.txt"
+
+REM Change to the specified folder
 cd /d "%folder%"
-REM
+
+REM Clear
 if exist "%outputFile%" del "%outputFile%"
-REM
+
+REM Loop through all image files
 for %%f in (*.jpg *.jpeg *.png *.gif *.bmp *.tiff) do (
-    echo %%~nf >> "%outputFile%"
+    <nul set /p ="%%~nf" >> "%outputFile%"
+    echo(>> "%outputFile%"
 )
+
 echo Image names have been saved to %outputFile%
 pause
